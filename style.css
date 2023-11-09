@@ -32,7 +32,8 @@
 .sissejuhatav {
     font-size: 20px;
     padding-left: 5%;
-    padding-right: 15%;
+    padding-right: 5%;
+    text-align: center;
     color: rgb(0,0,0);
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -45,13 +46,25 @@
     padding-left: 1%;
 }
 
+.minipealkiri {
+    font-size: 20px;
+    color: rgb(0,0,0);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: left;
+    padding-left: 1%;
+}
+
 .tavatekst {
     font-size: 15px;
     color: rgb(15,15,15);
     font-family: 'Times New Roman';
     font-weight: 100;
     padding-left: 1%;
+    float: auto;
+    width: 50%;
 }
+
+
 img {
     width: 40%;
     height: 40%;
