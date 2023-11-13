@@ -38,6 +38,20 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+.content {
+    padding: 16px;
+  }
+
+.sticky {
+    position: sticky;
+    top: -100px;
+    width: 100%
+  }
+
+.sticky + .content {
+    padding-top: 100px;
+  }
+
 h2 {
     font-size: 25px;
     color: rgb(0,0,0);
