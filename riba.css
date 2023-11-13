@@ -24,7 +24,6 @@ body, h1, p {
 .topbutton{
 	padding:10px 10px;
 	background-color: #333;
-	font: "Times New Roman";
 	font-size: 30px;
 	color: white;
 	cursor: pointer;
