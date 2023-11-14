@@ -6,9 +6,9 @@ var header = document.getElementById("pealkiri");
 
 var sticky = header.offsetHeight;
 
-// Lisab "sticky" klassi pealkirjale, kui scrollida, võtab selle ära, kui kasutaja vaatab lehe ülaosa.
+// Lisab "sticky" klassi pealkirjale, kui scrollida. Võtab selle ära, kui kasutaja vaatab lehe ülaosa.
 function myFunction() {
-  if (window.pageYOffset > sticky) {
+  if (window.scrollY > sticky) {
     header.classList.add("sticky");
   } else {
     header.classList.remove("sticky");
