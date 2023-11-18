@@ -4,6 +4,16 @@
   <title>pealeheriba</title>
   <link rel="stylesheet" type="text/css" href="riba.css">
 </head>
+<!-- This is a comment 
+TODO:
+automaatsed suurused (et täisekraanil poleks see vasak riba nii tilluke.)
+
+Pealeht ise.
+
+fontide adjustimised jms.
+
+Panna nupud päriselt linkima teisele lehele.
+-->
 <body>
   <div id="logoriba">
 	<a href="riba.html">
@@ -13,11 +23,11 @@
   <div class="top-bar" id="topBar">
 	<div class="topbuttoncontainer">
 		<button class="topbutton" onmouseover="nupphover('alter')" onmouseout="nuppreset('alter')" id="alter">Alternatiivid</button>
-		<div id="dropdown" onmouseover="dropDown()" onmouseout="dropUp()">
-			<button class="topbutton" onmouseover="nupphover('minig')" onmouseout="nuppreset('minig')" id="minig">Minigolf</button>
-			<button class="topbutton" onmouseover="nupphover('disc')" onmouseout="nuppreset('disc')" id="disc">Discgolf</button>
-			<button class="topbutton" onmouseover="nupphover('volks')" onmouseout="nuppreset('volks')" id="volks">Volkswagen Golf</button>
-			<button class="topbutton" onmouseover="nupphover('hoovus')" onmouseout="nuppreset('hoovus')" id="hoovus">Golfi hoovus</button>
+		<div id="dropdown" onmouseout="dropUp()" onmouseover="dropDown()">
+			<button class="ddbutton" onmouseover="nupphover('minig')" onmouseout="nuppreset('minig')" id="minig">Minigolf</button>
+			<button class="ddbutton" onmouseover="nupphover('disc')" onmouseout="nuppreset('disc')" id="disc">Discgolf</button>
+			<button class="ddbutton" onmouseover="nupphover('volks')" onmouseout="nuppreset('volks')" id="volks">Volkswagen Golf</button>
+			<button class="ddbutton" onmouseover="nupphover('hoovus')" onmouseout="nuppreset('hoovus')" id="hoovus">Golfi hoovus</button>
 		</div>
 	</div>
 	<div class="topbuttoncontainer">

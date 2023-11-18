@@ -31,12 +31,82 @@ function nuppreset(elementID){
 		dropUp();
 	}
 }
-function dropDown(){
-	document.getElementById("dropdown").style.display="block";
-}
+var ddState="üleval";
+var esimenekord=0;
 function dropUp(){
-	document.getElementById("dropdown").style.display="none";
+	ddState="üleval";
+	setTimeout(function(){
+		if(ddState=="üleval"){
+	document.getElementById("minig").style.top="0px";
+	document.getElementById("disc").style.top="0px";
+	document.getElementById("volks").style.top="0px";
+	document.getElementById("hoovus").style.top="0px";
+	document.getElementById("minig").style.opacity="0";
+	document.getElementById("disc").style.opacity="0";
+	document.getElementById("volks").style.opacity="0";
+	document.getElementById("hoovus").style.opacity="0";
+		}
+	}, 200);
+	setTimeout(function(){
+		if(document.getElementById("disc").style.opacity==0){
+			document.getElementById("dropdown").style.pointerEvents="none";
+		}
+	}, 1000);
 }
+function dropDown(){
+		if(ddState=="üleval" && esimenekord != 0){
+	
+	document.getElementById("dropdown").style.display="block";
+	document.getElementById("minig").style.top="0px";
+	document.getElementById("disc").style.top="0px";
+	document.getElementById("volks").style.top="0px";
+	document.getElementById("hoovus").style.top="0px";
+	document.getElementById("minig").style.opacity="0";
+	document.getElementById("disc").style.opacity="0";
+	document.getElementById("volks").style.opacity="0";
+	document.getElementById("hoovus").style.opacity="0";
+	
+	document.getElementById("minig").style.top="0px";
+	document.getElementById("disc").style.top="40px";
+	document.getElementById("volks").style.top="80px";
+	document.getElementById("hoovus").style.top="120px";
+	document.getElementById("minig").style.opacity="1";
+	document.getElementById("disc").style.opacity="1";
+	document.getElementById("volks").style.opacity="1";
+	document.getElementById("hoovus").style.opacity="1";
+	document.getElementById("dropdown").style.pointerEvents="auto";
+	}
+	if(ddState=="üleval" && esimenekord==0){
+	document.getElementById("dropdown").style.display="block";
+	document.getElementById("minig").style.top="0px";
+	document.getElementById("disc").style.top="0px";
+	document.getElementById("volks").style.top="0px";
+	document.getElementById("hoovus").style.top="0px";
+	document.getElementById("minig").style.opacity="0";
+	document.getElementById("disc").style.opacity="0";
+	document.getElementById("volks").style.opacity="0";
+	document.getElementById("hoovus").style.opacity="0";
+	esimenekord=1;
+	
+	setTimeout(function(){
+		document.getElementById("minig").style.top="0px";
+		document.getElementById("disc").style.top="40px";
+		document.getElementById("volks").style.top="80px";
+		document.getElementById("hoovus").style.top="120px";
+		document.getElementById("minig").style.opacity="1";
+		document.getElementById("disc").style.opacity="1";
+		document.getElementById("volks").style.opacity="1";
+		document.getElementById("hoovus").style.opacity="1";
+		document.getElementById("dropdown").style.pointerEvents="auto";
+	},10);
+	
+	}
+
+
+	
+	ddState="all";
+}
+
 
 
 
