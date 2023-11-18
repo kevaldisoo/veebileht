@@ -4,14 +4,25 @@ window.onscroll = function() {myFunction()};
 // Kaks muutujat saamaks pealkirja ja riba asukoha infot.
 var header = document.getElementById("pealkiri");
 
-var sticky = header.offsetHeight;
+var keritud = false
 
 // Lisab "sticky" klassi pealkirjale, kui scrollida, võtab selle ära, kui kasutaja vaatab lehe ülaosa.
 function myFunction() {
+<<<<<<< Updated upstream
   if (window.pageYOffset > sticky) {
     header.classList.add("sticky");
+=======
+  if (window.scrollY > 50) {
+    if (!keritud) {
+      header.classList.add('keritud');
+      keritud = true;
+    }
+>>>>>>> Stashed changes
   } else {
-    header.classList.remove("sticky");
+    if (keritud) {
+      header.classList.remove("keritud");
+      keritud = false
+    }
   }
 }
 
