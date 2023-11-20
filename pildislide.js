@@ -1,23 +1,30 @@
+var document;
+var vasakultpilt = document.getElementsByClassName('pilt piltvasakul');
+var paremaltpilt = document.getElementsByClassName('pilt piltparemal');
+var elementHeight = vasakultpilt.clientHeight;
 
-var element = document.getElementById('liikuvpilt');
-var elementHeight = element.clientHeight;
 
-// listen for scroll event and call animate function
-document.addEventListener('scroll', animate);
+// ootab scrollimist, kutsub välja "animate" funktsiooni
 
-// check if element is in view
+for (var i = 0; i < vasakultpilt.length; i++) {
+  vasakultpilt[i].addEventListener('scroll', animatevasak);
+}
+
+for (var i = 0; i < paremaltpilt.length; i++) {
+  paremaltpilt[i].addEventListener('scroll', animateparem);
+}
+// kas elementi on näha?
 function inView() {
-  // get window height
   var windowHeight = window.innerHeight;
-  // get number of pixels that the document is scrolled
-  var scrollY = window.scrollY
+  // kui palju on keritud?
+  var scrollY = window.scrollY;
   
-  // get current scroll position (distance from the top of the page to the bottom of the current viewport)
+  // distants lehe ülaservast ekraani alaservani
   var scrollPosition = scrollY + windowHeight;
-  // get element position (distance from the top of the page to the bottom of the element)
-  var elementPosition = element.getBoundingClientRect().top + scrollY + elementHeight;
+  // distants ekraani ülaservast elemendi alaservani
+  var elementPosition = vasakultpilt[0].getBoundingClientRect().top + scrollY + elementHeight;
   
-  // is scroll position greater than element position? (is element in view?)
+  // kumb väärtus on suurem ehk kas elementi on näha?
   if (scrollPosition > elementPosition) {
     return true;
   }
@@ -25,21 +32,18 @@ function inView() {
   return false;
 }
 
-// animate element when it is in view
-function animate() {
-  // is element in view?
+// animeeri, kui elementi on näha
+function animatevasak() {
   if (inView()) {
-    var right = 0
-    run = function(){
-        element.style.right = right + "px";
-        if (right++ < 600) {
-            setTimeout(run, 1)
-        }
-    }
-    run()
+    vasakultpilt[0].classList.add('animatevasak')
   }
 }
 
+function animateparem() {
+  if (inView()) {
+    paremaltpilt[0].classList.add('animateparem')
+  }
+}
 
-
-// viide: https://stackoverflow.com/questions/9090750/how-to-slow-down-a-javascript-loop (20.11.2023)
+// viited: https://stackoverflow.com/questions/9090750/how-to-slow-down-a-javascript-loop (20.11.2023)
+// https://codepen.io/jr-cologne/pen/zdYdmx (20.11.2023)
