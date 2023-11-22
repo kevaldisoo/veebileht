@@ -8,7 +8,23 @@ body, h1, p {
   color: white;
   padding: 5px;
 }
-
+.alltulp{
+	display: flex;
+	width: 100%;
+}
+.imeji{
+	flex: 1;
+	padding: 0px;
+	box-sizing: border-box;
+}
+.pildinõunik{
+	width: 100%;
+}
+.kesktulbasuurnõunik{
+	flex: 2;
+	padding: 20px;
+	box-sizing: border-box;
+}
 .top-bar {
   position: static;
   width: 100%;
@@ -85,8 +101,33 @@ body, h1, p {
 #v6lurida{
 	height: 0px;
 }
+.sisukonteiner{
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+.kesktulp{
+	width: 50%;
+	border: 2px;
+}
+.vasakgolfipilt{
+	position: relative;
+	top: 20px;
+	left: 20px;
+}
+.paremgolfipilt{
+	position: relative;
+	top: 20px;
+	right: 20px;
+}
 .spam{
-	padding: 20%;
+	padding:100%;
+}
+#gorufu{
+	width:20%;
+}
+#gorufu2{
+	width:20%;
 }
 #golflogo{
 	width:20%;	

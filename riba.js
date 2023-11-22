@@ -53,7 +53,7 @@ function dropUp(){
 		}
 	}, 1000);
 }
-function dropDown(){
+function dropDown(){//seda jura võõõõõib-olla saaks paremaks teha
 		if(ddState=="üleval" && esimenekord != 0){
 	
 	document.getElementById("dropdown").style.display="block";
@@ -99,11 +99,7 @@ function dropDown(){
 		document.getElementById("hoovus").style.opacity="1";
 		document.getElementById("dropdown").style.pointerEvents="auto";
 	},10);
-	
-	}
-
-
-	
+	}	
 	ddState="all";
 }
 
