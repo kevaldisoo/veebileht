@@ -35,6 +35,15 @@
     height: 10vh;
 }
 
+.kõrvuti {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items:center;
+    column-gap: 2vw;
+    
+
+}
+
 .pealkiri {
     font-size: 30px;
     color: rgb(0,64,0);
@@ -55,14 +64,13 @@
 
 .tekstvasakul {
     text-align: left;
-    float: left;
     padding-left: 10px;
+    max-width: 50vw;
 }
-
 .tekstparemal {
-    float: right;
     text-align: right;
-    padding-right: 20px;
+    padding-right: 2vw;
+    max-width: 52vw;
 }
 .alapealkiri {
     color: rgb(0,64,0);
@@ -82,7 +90,6 @@
     color: rgb(0,64,0);
     font-family:Arial, Helvetica, sans-serif;
     font-weight: 100;
-    text-overflow: clip;
 }
 
 .põhi {
@@ -99,19 +106,30 @@
     border-radius: 1vw;
     border-style: inset;
     border-spacing: 2px;
-    position: relative;
 }
 
 .piltvasakul {
-    margin-left: -550px;
+    margin-left: -100vw;
     float: left;
 }
 
 .piltparemal {
-    margin-right: -550px;
+    margin-right: -100vw;
     float: right;
+
 }
 
+.pildipuhverparem {
+    display: block;
+    width: 45vw;
+    height: 10vh;
+}
+
+.pildipuhvervasak {
+    display: block;
+    width: 45vw;
+    height: 10vh;
+}
 
 .link {
     color: rgb(0,64,0);
@@ -136,10 +154,10 @@
   
 @keyframes animateparem {
     from {
-        margin-right: -550px;
+        margin-right: -100vw;
     }
     to {
-        margin-right: 50px;
+        margin-right: 2vw;
     }
 }
 
@@ -152,17 +170,10 @@
   
 @keyframes animatevasak {
     from {
-        margin-left: -550px;
+        margin-left: -100vw;
     }
     to {
-        margin-left: 50px;
+        margin-left: 1vw;
     }
 }
 
-#test {
-    color: blue;
-}
-
-.hea {
-    font-size: 200px;
-}
