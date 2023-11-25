@@ -1,32 +1,55 @@
 .header {
-    position: relative;
-    color: #f2f2f2;
-    padding: 30px;
-    text-align:left;
-    width: 50%;
-    transform: skewY(-15deg);
-    padding-bottom: 70px;
-    font-size: 80px;
-  }
-  
-.header::after{
+    position: sticky;
     background:#3FB74B;
-    content:"";
-    top:-150px;
-    left:-10px;
-    height: 270px;
-    width:100vw;
+    transform: skewY(-15deg);
+    transform-origin: top;
+    width: 130vw;
+    padding-left: 12vw;
+    margin-left: -85vw;
+    height: 35vh;
+    top: 0;
+    opacity: 90%;
+  }
+
+#headeritekst {
     position: absolute;
-    transform-origin: bottom left;
-    z-index: -1;
+    bottom: 0;
+    color: #f2f2f2;
+    text-indent: 73vw;
+    font-size: 80px;
+
+}
+
+.headeri-pilt {
+    width: 100vw;
+    height: 32vh;
+    margin-top: -30vw;
+    margin-bottom: 4vw;
+    margin-left: -1vw;
+}
+
+  
+.puhver {
+    display: block;
+    width: 100vw;
+    height: 10vh;
+}
+
+.kõrvuti {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items:center;
+    column-gap: 2vw;
+    
 
 }
 
 .pealkiri {
     font-size: 30px;
-    color: rgb(0,0,0);
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(0,64,0);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
+    font-weight: 500;
 }
 
 .sissejuhatav {
@@ -34,38 +57,123 @@
     padding-left: 5%;
     padding-right: 5%;
     text-align: center;
-    color: rgb(0,0,0);
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(0,64,0);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
 }
 
-h2 {
-    font-size: 25px;
-    color: rgb(0,0,0);
-    font-family: Georgia, 'Times New Roman', Times, serif;
+.tekstvasakul {
     text-align: left;
-    padding-left: 1%;
+    padding-left: 10px;
+    max-width: 50vw;
+}
+.tekstparemal {
+    text-align: right;
+    padding-right: 2vw;
+    max-width: 52vw;
+}
+.alapealkiri {
+    color: rgb(0,64,0);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 300;
 }
 
 .minipealkiri {
-    font-size: 20px;
-    color: rgb(0,0,0);
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    text-align: left;
-    padding-left: 1%;
+
+    color: rgb(0,64,0);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 200;
 }
 
 .tavatekst {
-    font-size: 15px;
-    color: rgb(15,15,15);
-    font-family: 'Times New Roman';
+
+    color: rgb(0,64,0);
+    font-family:Arial, Helvetica, sans-serif;
     font-weight: 100;
-    padding-left: 1%;
-    width: 50%;
 }
 
+.põhi {
+    background-color: rgb(100,220,100);
+    overflow-x: hidden;
+    width: 100%;
+    
+}
 
-img {
-    width: 40%;
-    height: 40%;
+.pilt {
+    height: 300px;
+    width: 533px;
+    border-color: green;
+    border-radius: 1vw;
+    border-style: inset;
+    border-spacing: 2px;
+}
+
+.piltvasakul {
+    margin-left: -100vw;
+    float: left;
+}
+
+.piltparemal {
+    margin-right: -100vw;
     float: right;
+
 }
+
+.pildipuhverparem {
+    display: block;
+    width: 45vw;
+    height: 10vh;
+}
+
+.pildipuhvervasak {
+    display: block;
+    width: 45vw;
+    height: 10vh;
+}
+
+.link {
+    color: rgb(0,64,0);
+}
+
+.jalus {
+    text-align: center;
+    width: 105%;
+    margin-left: -3vw;
+    margin-bottom: -1vw;
+    position: absolute;
+
+    background-color: #3FB74B;
+}
+
+.animateparem {
+    animation-name: animateparem;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  
+@keyframes animateparem {
+    from {
+        margin-right: -100vw;
+    }
+    to {
+        margin-right: 2vw;
+    }
+}
+
+.animatevasak {
+    animation-name: animatevasak;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  
+@keyframes animatevasak {
+    from {
+        margin-left: -100vw;
+    }
+    to {
+        margin-left: 1vw;
+    }
+}
+
