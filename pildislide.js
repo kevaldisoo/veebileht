@@ -11,7 +11,6 @@ function animate(i) {
     pilt[i].classList.add('animateparem');
   }
 }
-debugger
 // ootab scrollimist, kutsub välja "animate" funktsiooni
 document.addEventListener('scroll', animate);
 // kas elementi on näha?
