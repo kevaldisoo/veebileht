@@ -65,7 +65,7 @@ function init() {
 	textureShader = new shader(document.getElementById("texvs").textContent, document.getElementById("texfs").textContent, gl);
 	//tekstuuri keeduplaat
 
-	texturere=loadTexture(gl, "salagolfiassetid.png");
+	texturere=loadTexture(gl, "https://i.imgur.com/wl48Zut.png");
 	taustaSprait=new sprite(gl, textureShader, "salagolfiassetid.png", 0, 1024-511, 512, 1024-1024);
 	//juhiseSprait=new sprite(gl, textureShader, "salagolfiassetid.png", 0, 1024-0, 543, 1024-145);
 	//golfiSprait=new sprite(gl, textureShader, "salagolfiassetid.png", 926, 0, 1023, 98)
