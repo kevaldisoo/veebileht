@@ -103,6 +103,8 @@ function dropDown(){//seda jura võõõõõib-olla saaks paremaks teha
 	ddState="all";
 }
 
-
+function redirectTo(leht){//lõpus peaks see leht olema meie vastav url tho.
+	window.location.href=leht;
+}
 
 
