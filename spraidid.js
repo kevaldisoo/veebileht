@@ -77,7 +77,7 @@ class sprite{//ristkülikuline 2D.
 		var x2a=x2/this.la;
 		var y1a=y1/this.kõ;
 		var y2a=y2/this.kõ;
-		gl.bindBuffer(gl.ARRAY_BUFFER, this.buffer);
+		//gl.bindBuffer(gl.ARRAY_BUFFER, this.buffer);
 		this.gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
 		xpos-ex,ypos+ey,x1a,y2a,
 		xpos+ex,ypos+ey,x2a,y2a,

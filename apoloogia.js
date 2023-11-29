@@ -32,14 +32,18 @@ animate();
 
 var välineaeg=0;
 var iks;
+var iksvel;
 var igrek;
+var igrvel;
 var synd;
 var indeks=0;
 
 function init() {
 	iks = new Array(100).fill(0);
-	igrek = new Array(109).fill(0);
-	synd= new Array(109).fill(0);
+	igrek = new Array(100).fill(0);
+	iksvel= new Array(100).fill(0);
+	igrvel= new Array(100).fill(0);
+	synd= new Array(100).fill(0);
 	
 	canvas = document.querySelector('canvas');//webGL initsialiseerimise keeduplaat
     try {
@@ -81,15 +85,18 @@ function animate() {
 }
 
 
-
+var viimaneaeg=0;
 function handleKeyPress(event) {
     const pressedKey = event.key;
-    if(pressedKey==" "){
+    if(pressedKey==" " && (välineaeg-viimaneaeg>80)){
+		viimaneaeg=välineaeg;
 		indeks++;
 		if(indeks==100){indeks=0;}
 		synd[indeks]=välineaeg;
 		iks[indeks]=256.0;
 		igrek[indeks]=100.0;
+		iksvel[indeks]=(Math.random()*2.0-1.0)*6;
+		igrvel[indeks]=12+Math.random()*5;
 	}
 }
 document.addEventListener('keydown', handleKeyPress);
@@ -104,16 +111,20 @@ function render() {
 	gl.uniform1i(gl.getUniformLocation(textureShader.getProgram(), "u_texture"),0);
 
 	textureShader.setResolution(parameters.screenWidth, parameters.screenHeight);
-	var aeg=parameters.time/1000;
+	var aeg=parameters.time/2000;
 	var an=aeg;
 	taustaSprait.render(256.0,256.0,1.0,0, 1024-511, 512, 1024-1024);
 	taustaSprait.render(235+Math.cos(an)*10, 440+Math.sin(an*2)*2, 0.8, 0, 1024-0, 543, 1024-145);
 	for(let i=0;i<100;i++){
 	var dt=parameters.time-synd[i];
-	if(dt<1000){
-	taustaSprait.render(iks[i], igrek[i], 1.0-dt/1000.0, 926, 1024-1, 1023, 1024-98);
+	if(dt<2000){
+		var nms=dt/2000.0;//0 ~ 1
+		var sur=(1/(1+nms*3)-0.25)/0.75;
+	taustaSprait.render(iks[i], igrek[i], sur, 926, 1024-1, 1023, 1024-98);
 	}
-	igrek[i]+=2;
+	igrek[i]+=igrvel[i]*(sur);
+	iks[i]+=iksvel[i]*(sur);
+	igrvel[i]-=0.4;
 	//füsiks
 	}
 	//juhiseSprait.render(256,400,0.8);
