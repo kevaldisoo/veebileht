@@ -54,10 +54,11 @@ h2 {
 
 .minipealkiri {
     font-size: 20px;
-    color: rgb(0,0,0);
+    color: rgb(97, 97, 97);
     font-family: Georgia, 'Times New Roman', Times, serif;
-    text-align: left;
+    text-align: 100;
     padding-left: 1%;
+    width: 50%;
 }
 
 .tavatekst {
