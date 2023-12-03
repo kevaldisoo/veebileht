@@ -19,7 +19,7 @@ h2 {
 	flex: 1;
 	padding: 0px;
 	box-sizing: border-box;
-	background-color: #90FF90;
+	background-color: rgb(100,220,100);
 }
 .pildinõunik{
 	width: 100%;
@@ -28,7 +28,7 @@ h2 {
 	flex: 2;
 	padding: 20px;
 	box-sizing: border-box;
-	background-color: #90FF90;
+	background-color: rgb(100,220,100);
 }
 .top-bar {
   position: static;
@@ -136,4 +136,8 @@ h2 {
 }
 #golflogo{
 	width:20%;	
+}
+.piltvasakul {
+    margin-left: -100vw;
+    float: left;
 }
