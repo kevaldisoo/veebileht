@@ -1,4 +1,4 @@
-class shader{
+class shader{//shader'i haldamisklass.
 	constructor(vertex,fragment, gl){
 		this.gl=gl;
 		this.shaderloc=createProgram(vertex,fragment);
@@ -7,7 +7,6 @@ class shader{
 	}
 	useShader(){
 		this.gl.useProgram(this.shaderloc);
-		
 	}
 	getProgram(){
 		return this.shaderloc;
@@ -26,9 +25,8 @@ class shader{
 	}
 }
 var COUNTER=0;
-class sprite{//ristkülikuline 2D.
-	constructor(gl, shader, namae, x1, y1, x2, y2){//
-		
+class sprite{//sprite class.
+	constructor(gl, shader, name, x1, y1, x2, y2){//mõni ehk märkab, et name-parameeter jääb lõpuks kasutamata. Jääb tõesti :) :) :)	
 		this.la=1025.0;
 		this.kõ=1024.0;
 		this.gl=gl;
@@ -43,7 +41,7 @@ class sprite{//ristkülikuline 2D.
 		var ey=this.sy;
 		var xpos=0;
 		var ypos=0;
-		var x1a=x1/this.la;
+		var x1a=x1/this.la;//nagu siin seda koodi saaks 100% asjalikumaks teha, aga milleks parandada lõpptulemust, mis töötab, onju.
 		var x2a=x2/this.la;
 		var y1a=y1/this.kõ;
 		var y2a=y2/this.kõ;
@@ -55,7 +53,7 @@ class sprite{//ristkülikuline 2D.
 		xpos-ex,ypos-ey,x1a,y2a,
 		xpos+ex,ypos-ey,x2a,y2a]);
 		this.buffer=this.gl.createBuffer();
-		this.gl.bindBuffer(gl.ARRAY_BUFFER, this.buffer);
+		this.gl.bindBuffer(gl.ARRAY_BUFFER, this.buffer);//webgl värgendused.
 		this.gl.bufferData(gl.ARRAY_BUFFER, this.bufdata, this.gl.STATIC_DRAW);
 		this.gl.vertexAttribPointer(0, 2, this.gl.FLOAT, false, 16, 0);
 		this.gl.enableVertexAttribArray(0);
@@ -91,7 +89,7 @@ class sprite{//ristkülikuline 2D.
 		//mmm polümorfism time?
 	}
 }
-class suprite{//ristkülikuline 2D.
+class suprite{//lõppversioonis jäi vist kasutamata? Vahepealses etapis sai kasutatud. Ilma tekstuurita renderdusbisnes.
 	constructor(shader, gl){//bufdata kui Float32Array palun ja aitäh.
 		this.gl=gl;
 		this.shader=shader;//x1, y1, xtex, ytex jne.
@@ -112,6 +110,7 @@ class suprite{//ristkülikuline 2D.
 		this.gl.drawArrays(gl.TRIANGLES, 0, 6);
 	}
 	update(){
-		//mmm polümorfism time?
+		//lõpuks ei läinud vajagi, aga tühja kah.
 	}
 }
+//allikas: mina ise, (Khronos Group). ChatGPT 3.5 ei oska kahjuks WebGL-i eriti hästi.

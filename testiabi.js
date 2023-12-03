@@ -1,4 +1,5 @@
-function createProgram(vertex, fragment) {
+function createProgram(vertex, fragment) { //https://developer.mozilla.org/en-US/docs/Web/API/WebGLShader vms.
+    //vägagi boilerplate värk.
     var program = gl.createProgram();
     var vs = createShader(vertex, gl.VERTEX_SHADER);
     var fs = createShader('#ifdef GL_ES\nprecision highp float;\n#endif\n\n' + fragment, gl.FRAGMENT_SHADER);
@@ -19,7 +20,7 @@ function createProgram(vertex, fragment) {
     return program;
 }
 
-function createShader(src, type) {
+function createShader(src, type) { //boilerplate 2: electric boogaloo
     var shader = gl.createShader(type);
     gl.shaderSource(shader, src);
     gl.compileShader(shader);
@@ -30,77 +31,78 @@ function createShader(src, type) {
     return shader;
 }
 
-function resizeCanvas(event) {
+function resizeCanvas(event) { //boilerplate 3: kuninga tagasitulek (endiselt kuskilt seal developer.mozilla lehelt)
     if (canvas.width != canvas.clientWidth ||
         canvas.height != canvas.clientHeight) {
         canvas.width = canvas.clientWidth;
         canvas.height = canvas.clientHeight;
         parameters.screenWidth = canvas.width;
         parameters.screenHeight = canvas.height;
-        gl.viewport(0, 0, canvas.width, canvas.height);
+        gl.viewport(0, 0, canvas.width, canvas.height); //seda värki võiks muuta tho. Proportsioonivärgindust.
     }
 }
 var PILDILAIUS;
 var PILDIKÕRGUS;
-function loadTexture(gl, url) {//https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial/Using_textures_in_WebGL
-  const texture = gl.createTexture();
-  gl.bindTexture(gl.TEXTURE_2D, texture);
 
-  const level = 0;
-  const internalFormat = gl.RGBA;
-  const width = 1;
-  const height = 1;
-  const border = 0;
-  const srcFormat = gl.RGBA;
-  const srcType = gl.UNSIGNED_BYTE;
-  const pixel = new Uint8Array([0, 0, 255, 255]); // opaque blue
-  gl.texImage2D(
-    gl.TEXTURE_2D,
-    level,
-    internalFormat,
-    width,
-    height,
-    border,
-    srcFormat,
-    srcType,
-    pixel,
-  );
-
-  const imaje = new Image();
-  imaje.onload = () => {
+function loadTexture(gl, url) { //https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial/Using_textures_in_WebGL
+    const texture = gl.createTexture();
     gl.bindTexture(gl.TEXTURE_2D, texture);
+
+    const level = 0;
+    const internalFormat = gl.RGBA;
+    const width = 1;
+    const height = 1;
+    const border = 0;
+    const srcFormat = gl.RGBA;
+    const srcType = gl.UNSIGNED_BYTE;
+    const pixel = new Uint8Array([0, 0, 255, 255]); // opaque blue
     gl.texImage2D(
-      gl.TEXTURE_2D,
-      level,
-      internalFormat,
-      srcFormat,
-      srcType,
-      imaje,
+        gl.TEXTURE_2D,
+        level,
+        internalFormat,
+        width,
+        height,
+        border,
+        srcFormat,
+        srcType,
+        pixel,
     );
 
-    // WebGL1 has different requirements for power of 2 images
-    // vs. non power of 2 images so check if the image is a
-    // power of 2 in both dimensions.
-    if (isPowerOf2(imaje.width) && isPowerOf2(imaje.height)) {
-      // Yes, it's a power of 2. Generate mips.
-      gl.generateMipmap(gl.TEXTURE_2D);
-    } else {
-      // No, it's not a power of 2. Turn off mips and set
-      // wrapping to clamp to edge
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
-      PILDILAIUS=imaje.width;
-	  PILDIKÕRGUS=imaje.height;
-	}
-  };
-  imaje.crossOrigin= "anonymous";
-  imaje.src = url;
+    const imaje = new Image();
+    imaje.onload = () => {
+        gl.bindTexture(gl.TEXTURE_2D, texture);
+        gl.texImage2D(
+            gl.TEXTURE_2D,
+            level,
+            internalFormat,
+            srcFormat,
+            srcType,
+            imaje,
+        );
 
-  return texture;
+        // WebGL1 has different requirements for power of 2 images
+        // vs. non power of 2 images so check if the image is a
+        // power of 2 in both dimensions.
+        if (isPowerOf2(imaje.width) && isPowerOf2(imaje.height)) {
+            // Yes, it's a power of 2. Generate mips.
+            gl.generateMipmap(gl.TEXTURE_2D);
+        } else {
+            // No, it's not a power of 2. Turn off mips and set
+            // wrapping to clamp to edge
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+            PILDILAIUS = imaje.width;
+            PILDIKÕRGUS = imaje.height;
+        }
+    };
+    imaje.crossOrigin = "anonymous";
+    imaje.src = url;
+
+    return texture;
 }
 
 function isPowerOf2(value) {
-  return (value & (value - 1)) === 0;
+    return (value & (value - 1)) === 0;
 }
-
+//pmst siia .js faili saigi topitud enamus boilerplate värgist, mille kuskile pidi panema, ja mida niikuinii muudab minimaalselt.

@@ -1,4 +1,4 @@
- window.requestAnimationFrame = window.requestAnimationFrame || (function() {
+window.requestAnimationFrame = window.requestAnimationFrame || (function() {
     return window.webkitRequestAnimationFrame ||
         window.mozRequestAnimationFrame ||
         window.oRequestAnimationFrame ||
@@ -20,12 +20,7 @@ var parameters = {
     screenWidth: 0,
     screenHeight: 0
 };
-var clrShdr;
-var suurSprait;
-var väikeSprait;
 var taustaSprait;
-var juhiseSprait;
-var golfiSprait;
 var texturere;
 init();
 animate();
@@ -55,27 +50,14 @@ function init() {
 	gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
 	const alignment = 1;
 	gl.pixelStorei(gl.UNPACK_ALIGNMENT, alignment);
-	gl.enable(gl.BLEND);
-	gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+	gl.enable(gl.BLEND);//et oleks võimalik läbipaistvus.
+	gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);//et spraidid (eeskätt golfipallid) saaksid läbi paista ilusti.
 
-    buffer = gl.createBuffer();//võiks minna sprite classi sisse.
-    gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1.0, -1.0, 1.0, -1.0, -1.0, 1.0, 1.0, -1.0, 1.0, 1.0, -1.0, 1.0]), gl.STATIC_DRAW);
-    // shader programmiga seotud keeduplaat
-    colorfulShader = createProgram(document.getElementById('vs').textContent, document.getElementById('fs').textContent);
-	
-    clrShdr= new shader(document.getElementById('vs').textContent, document.getElementById('fs').textContent, gl);
-	suurSprait= new suprite(clrShdr, gl);
-	textureShader = new shader(document.getElementById("texvs").textContent, document.getElementById("texfs").textContent, gl);
+    textureShader = new shader(document.getElementById("texvs").textContent, document.getElementById("texfs").textContent, gl);
 	//tekstuuri keeduplaat
 
 	texturere=loadTexture(gl, "https://i.imgur.com/wl48Zut.png");
-	taustaSprait=new sprite(gl, textureShader, "salagolfiassetid.png", 0, 1024-511, 512, 1024-1024);
-	//juhiseSprait=new sprite(gl, textureShader, "salagolfiassetid.png", 0, 1024-0, 543, 1024-145);
-	//golfiSprait=new sprite(gl, textureShader, "salagolfiassetid.png", 926, 0, 1023, 98)
-	//const texture = loadTexture(gl, "cubetexture.png");
-	//gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
-
+	taustaSprait=new sprite(gl, textureShader, "salagolfiassetid.png", 0, 1024-511, 512, 1024-1024);//mitte tausta, vaid kõige sprait. Nimi on jäänud eksitav.
 }
 
 function animate() {
@@ -88,7 +70,7 @@ function animate() {
 var viimaneaeg=0;
 function handleKeyPress(event) {
     const pressedKey = event.key;
-    if(pressedKey==" " && (välineaeg-viimaneaeg>80)){
+    if(pressedKey==" " && (välineaeg-viimaneaeg>80)){//golfipallivärgeldus
 		viimaneaeg=välineaeg;
 		indeks++;
 		if(indeks==100){indeks=0;}
@@ -113,14 +95,14 @@ function render() {
 	textureShader.setResolution(parameters.screenWidth, parameters.screenHeight);
 	var aeg=parameters.time/2000;
 	var an=aeg;
-	taustaSprait.render(256.0,256.0,1.0,0, 1024-511, 512, 1024-1024);
-	taustaSprait.render(235+Math.cos(an)*10, 440+Math.sin(an*2)*2, 0.8, 0, 1024-0, 543, 1024-145);
+	taustaSprait.render(256.0,256.0,1.0,0, 1024-511, 512, 1024-1024);//taust
+	taustaSprait.render(235+Math.cos(an)*10, 440+Math.sin(an*2)*2, 0.8, 0, 1024-0, 543, 1024-145);//juhiseplaat ülal
 	for(let i=0;i<100;i++){
 	var dt=parameters.time-synd[i];
 	if(dt<2000){
 		var nms=dt/2000.0;//0 ~ 1
-		var sur=(1/(1+nms*3)-0.25)/0.75;
-	taustaSprait.render(iks[i], igrek[i], sur, 926, 1024-1, 1023, 1024-98);
+		var sur=(1/(1+nms*3)-0.25)/0.75;//kordaja usutavama näiva perspektiivi tekitamiseks (sest milleks teha 3D-d, kui saab jätta vaid küsitava 3D-mulje.)
+	taustaSprait.render(iks[i], igrek[i], sur, 926, 1024-1, 1023, 1024-98);//golfipallid.
 	}
 	igrek[i]+=igrvel[i]*(sur);
 	iks[i]+=iksvel[i]*(sur);
@@ -129,3 +111,4 @@ function render() {
 	}
 	//juhiseSprait.render(256,400,0.8);
 }
+//https://github.com/paulirish/webgl-boilerplate/blob/master/index.html oli suureks abiks. Erinevalt chatGPTst (ta paraku oskab siiski ainult seda, mida on ohtralt tehtud ja mida internetis leidub mägede kaupa. Muu on raske tema jaoks.)
