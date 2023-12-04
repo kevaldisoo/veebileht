@@ -23,7 +23,7 @@ function inView() {
   // distants ekraani ülaservast elemendi alaservani
   var kaugused = [];
   for (let i = 0; i < pilt.length; i++) {
-    var elementPosition = pilt[i].getBoundingClientRect().top + scrollY + elementHeight + 100;
+    var elementPosition = pilt[i].getBoundingClientRect().top + scrollY + elementHeight + 20;
     kaugused.push(elementPosition);
   }
 
