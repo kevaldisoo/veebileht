@@ -59,7 +59,7 @@ h2 {
     padding-left: 1%;
 }
 
-.minipealkiri {
+.nipid {
     font-size: 20px;
     color: rgb(97, 97, 97);
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -92,4 +92,10 @@ img {
     position: absolute;
 
     background-color: #3FB74B;
+}
+
+.põhi {
+    background-color: rgb(100, 220, 100);
+    overflow-x: hidden;
+    width: 100%;
 }
