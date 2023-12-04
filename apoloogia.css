@@ -1,9 +1,12 @@
-.body {
-    background-color: #000000;
+body {
+    background-color: black;
     margin: 0px;
     overflow: hidden;
     width: 100%;
     height: 100%;
+}
+p {
+	color: black;
 }
 .canvas {
     width: 512px;
