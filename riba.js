@@ -40,17 +40,17 @@ function dropUp() {
     setTimeout(function() {
         if (ddState == "üleval") {
             document.getElementById("minig").style.top = "0px";//ma olen suhteliselt kindel, et siit saaks kuidagi midagi kokku tõmmata, aga ehh. Sait on väike ja koodi pole palju, nii et vahet ei ole.
-            document.getElementById("disc").style.top = "0px";
+            //document.getElementById("disc").style.top = "0px";
             document.getElementById("volks").style.top = "0px";
-            document.getElementById("hoovus").style.top = "0px";
+            //document.getElementById("hoovus").style.top = "0px";
             document.getElementById("minig").style.opacity = "0";
-            document.getElementById("disc").style.opacity = "0";
+            //document.getElementById("disc").style.opacity = "0";
             document.getElementById("volks").style.opacity = "0";
-            document.getElementById("hoovus").style.opacity = "0";
+            //document.getElementById("hoovus").style.opacity = "0";
         }
     }, 200);
     setTimeout(function() {
-        if (document.getElementById("disc").style.opacity == 0) {
+        if (document.getElementById("minig").style.opacity == 0) {
             document.getElementById("dropdown").style.pointerEvents = "none";//selleks, et menüü kohal hover'imine menüüd ei aktiveeriks, kui nupp aktiivne ei ole (menüü paikneb kokkutõmbunud olekus nupust allpool.)
         }
     }, 1000);
@@ -61,46 +61,46 @@ function dropDown() {
 
         document.getElementById("dropdown").style.display = "block";//ma olen nagu üsna kindel, et siit saaks midagi kokku tõmmata, aga siis, kui mul seda vaid ühe korra oli, ei tundunud see korralikult töötavat, nii et jäägu pigem mitmekordselt mõttetu kood, mis vähemalt töötab.
         document.getElementById("minig").style.top = "0px";
-        document.getElementById("disc").style.top = "0px";
+        //document.getElementById("disc").style.top = "0px";
         document.getElementById("volks").style.top = "0px";
-        document.getElementById("hoovus").style.top = "0px";
+        //document.getElementById("hoovus").style.top = "0px";
         document.getElementById("minig").style.opacity = "0";
-        document.getElementById("disc").style.opacity = "0";
+        //document.getElementById("disc").style.opacity = "0";
         document.getElementById("volks").style.opacity = "0";
-        document.getElementById("hoovus").style.opacity = "0";
+        //document.getElementById("hoovus").style.opacity = "0";
 
         document.getElementById("minig").style.top = "0px";
-        document.getElementById("disc").style.top = "40px";
-        document.getElementById("volks").style.top = "80px";
-        document.getElementById("hoovus").style.top = "120px";
+        //document.getElementById("disc").style.top = "40px";
+        document.getElementById("volks").style.top = "40px";
+        //document.getElementById("hoovus").style.top = "120px";
         document.getElementById("minig").style.opacity = "1";
-        document.getElementById("disc").style.opacity = "1";
+        //document.getElementById("disc").style.opacity = "1";
         document.getElementById("volks").style.opacity = "1";
-        document.getElementById("hoovus").style.opacity = "1";
+        //document.getElementById("hoovus").style.opacity = "1";
 		
         document.getElementById("dropdown").style.pointerEvents = "auto";//drop-down menüü peal hiire liigutamine taaskord teeb midagi.
     }
     if (ddState == "üleval" && esimenekord == 0) {
         document.getElementById("dropdown").style.display = "block";
         document.getElementById("minig").style.top = "0px";
-        document.getElementById("disc").style.top = "0px";
+        //document.getElementById("disc").style.top = "0px";
         document.getElementById("volks").style.top = "0px";
-        document.getElementById("hoovus").style.top = "0px";
+        //document.getElementById("hoovus").style.top = "0px";
         document.getElementById("minig").style.opacity = "0";
-        document.getElementById("disc").style.opacity = "0";
+        //document.getElementById("disc").style.opacity = "0";
         document.getElementById("volks").style.opacity = "0";
-        document.getElementById("hoovus").style.opacity = "0";
+        //document.getElementById("hoovus").style.opacity = "0";
         esimenekord = 1;
 
         setTimeout(function() {
             document.getElementById("minig").style.top = "0px";//setTimeout oli vajalik, kuna vastasel juhul ei oleks avanemine selline pidev, vaid ta kohe hüppaks avatuks.
-            document.getElementById("disc").style.top = "40px";
-            document.getElementById("volks").style.top = "80px";
-            document.getElementById("hoovus").style.top = "120px";
+            //document.getElementById("disc").style.top = "40px";
+            document.getElementById("volks").style.top = "40px";
+            //document.getElementById("hoovus").style.top = "120px";
             document.getElementById("minig").style.opacity = "1";
-            document.getElementById("disc").style.opacity = "1";
+            //document.getElementById("disc").style.opacity = "1";
             document.getElementById("volks").style.opacity = "1";
-            document.getElementById("hoovus").style.opacity = "1";
+            //document.getElementById("hoovus").style.opacity = "1";
             document.getElementById("dropdown").style.pointerEvents = "auto";
         }, 10);
     }
