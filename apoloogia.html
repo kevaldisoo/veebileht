@@ -9,7 +9,7 @@
 	<body class="põhi"> 
 		<canvas class="canvas"></canvas>
 		<div id="info"></div> 
-		<p id="texvs" type="x-shader/vertex"> 
+		<p id="texvs"> 
 			attribute vec2 position;
 			attribute vec2 v_texcoord;
 			varying vec2 f_texcoord;
@@ -18,7 +18,7 @@
 				f_texcoord=v_texcoord;
 			}
 		</p>
-		<p id="texfs" type="x-shader/fragment">
+		<p id="texfs">
 			varying vec2 f_texcoord;
 			uniform float time;
 			uniform sampler2D u_texture;
