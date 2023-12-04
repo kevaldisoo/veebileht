@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>pealeheriba</title>
   <link rel="stylesheet" type="text/css" href="riba.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <!-- This is a comment 
 TODO:
@@ -25,9 +26,9 @@ Panna nupud päriselt linkima teisele lehele.
 	<div class="topbuttoncontainer">
 		<button class="topbutton" onmouseover="nupphover('alter')" onmouseout="nuppreset('alter')" id="alter">Alternatiivid</button>
 		<div id="dropdown" onmouseout="dropUp()" onmouseover="dropDown()">
-			<button class="ddbutton" onmouseover="nupphover('minig')" onmouseout="nuppreset('minig')" onclick="redirectTo('alternatiivid.html')" id="minig">Minigolf</button>
+			<button class="ddbutton" onmouseover="nupphover('minig')" onmouseout="nuppreset('minig')" onclick="redirectTo('alternatiivid.html')" id="minig">Golfi alternatiivid</button>
+			<button class="ddbutton" onmouseover="nupphover('volks')" onmouseout="nuppreset('volks')" onclick="redirectTo('alamleht.html')" id="volks">Veel golfe</button>
 			<button class="ddbutton" onmouseover="nupphover('disc')" onmouseout="nuppreset('disc')" onclick="redirectTo('alternatiivid.html')" id="disc">Discgolf</button>
-			<button class="ddbutton" onmouseover="nupphover('volks')" onmouseout="nuppreset('volks')" onclick="redirectTo('alamleht.html')" id="volks">Volkswagen Golf</button>
 			<button class="ddbutton" onmouseover="nupphover('hoovus')" onmouseout="nuppreset('hoovus')" onclick="redirectTo('alamleht.html')" id="hoovus">Golfi hoovus</button>
 		</div>
 	</div>
@@ -44,67 +45,67 @@ Panna nupud päriselt linkima teisele lehele.
       <img class="pildinõunik" src="https://i.imgur.com/wNLQYrw.jpg" alt="Left Image">
     </div>
 
-    <div class="kesktulbasuurnõunik">
-      <h2>gOLF!</h2>
+    <div class="kesktulbasuurnõunik tavatekst">
+      <h2 class="minipealkiri">gOLF!</h2>
       <p>raudteelill, raudteelill, elu sul kui alasil</p>
 	  <p>lehed liipri lähedal, lisajuured liipri all</p>
 	  <p>õied õhus õrevil, varred maani marraskil</p>
 	  <p>raudteelill!</p>
 	  <p><br><br><br><br><br><br><br><br><br><br><br><br></p>
 	  <p>Ikka meenuvad minutid,<br>
-millal<br>
-viras vikerkaar<br>
-üle vee.<br>
-Me seisime raudsel sillal.<br>
-Sinu ees oli<br>
-raudne tee.<br>
-Aeg raputas aardeid mu ette.<br>
-Sinu ees oli<br>
-raudne tee.<br>
-Raudsillal<br>
-viskasin vette<br>
-ma<br>
-punakorallidest<br>
-kee.<br>
-Kõik mu aegade aarded on hallid.<br>
-Jumet<br>
-pole ka jumalatõel.<br>
-Veepõhjast<br>
-vaid punakorallid<br>
-vahel viravad<br>
-Emajõel.						</p>
-<p>
-<br><br><br><br><br><br>
-Mängivad pillid, kuu on vees,<br>
-siin on sadam, meremees.<br>
-<br>
-Laev on sadamas terve öö,<br>
-laud on kaetud --- võta ja söö!<br>
-<br>
-Viin on klaasis, käsi on soe,<br>
-homme ja ülehomme ei loe.<br>
-<br>
-Tule ja tantsi, põrand on kuum,<br>
-aeg on lühike, lõpmatu ruum.<br>
-<br>
-Lõpmatu meri. Siin on saar,<br>
-alati kaotanu võidukaar.<br>
-<br>
-Tiivad saarte vahele sild,<br>
-iga täht on päikese kild.<br>
-<br>
-Kildudest kokku mosaiik,<br>
-kuigi su võit on ainult viik.<br>
-<br>
-Kuu on kõrgel, kaugel on kants,<br>
-neeme tipuni jätkub tants.<br>
-<br>
-Neeme tipul on murdunud aer.<br>
-Naera, Odysseus, elu on naer!<br>
-<br>
-Lõpuks, meremees, siin on maa,<br>
-siin on sadam ja Nausikaa.<br>
-</p>
+		millal<br>
+		viras vikerkaar<br>
+		üle vee.<br>
+		Me seisime raudsel sillal.<br>
+		Sinu ees oli<br>
+		raudne tee.<br>
+		Aeg raputas aardeid mu ette.<br>
+		Sinu ees oli<br>
+		raudne tee.<br>
+		Raudsillal<br>
+		viskasin vette<br>
+		ma<br>
+		punakorallidest<br>
+		kee.<br>
+		Kõik mu aegade aarded on hallid.<br>
+		Jumet<br>
+		pole ka jumalatõel.<br>
+		Veepõhjast<br>
+		vaid punakorallid<br>
+		vahel viravad<br>
+		Emajõel.						</p>
+		<p>
+		<br><br><br><br><br><br>
+		Mängivad pillid, kuu on vees,<br>
+		siin on sadam, meremees.<br>
+		<br>
+		Laev on sadamas terve öö,<br>
+		laud on kaetud --- võta ja söö!<br>
+		<br>
+		Viin on klaasis, käsi on soe,<br>
+		homme ja ülehomme ei loe.<br>
+		<br>
+		Tule ja tantsi, põrand on kuum,<br>
+		aeg on lühike, lõpmatu ruum.<br>
+		<br>
+		Lõpmatu meri. Siin on saar,<br>
+		alati kaotanu võidukaar.<br>
+		<br>
+		Tiivad saarte vahele sild,<br>
+		iga täht on päikese kild.<br>
+		<br>
+		Kildudest kokku mosaiik,<br>
+		kuigi su võit on ainult viik.<br>
+		<br>
+		Kuu on kõrgel, kaugel on kants,<br>
+		neeme tipuni jätkub tants.<br>
+		<br>
+		Neeme tipul on murdunud aer.<br>
+		Naera, Odysseus, elu on naer!<br>
+		<br>
+		Lõpuks, meremees, siin on maa,<br>
+		siin on sadam ja Nausikaa.<br>
+		</p>
     </div>
 
     <div class="imeji">
