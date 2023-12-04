@@ -42,7 +42,7 @@ function init() {
 	
 	canvas = document.querySelector('canvas');//webGL initsialiseerimise keeduplaat
     try {
-        gl = canvas.getContext('experimental-webgl', {premultipliedAlpha: false});
+        gl = canvas.getContext('webgl', {premultipliedAlpha: false});
     } catch (error) {}
     if (!gl) {
         throw "cannot create webgl context";
